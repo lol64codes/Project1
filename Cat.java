@@ -1,5 +1,5 @@
 import mayflower.*;
-public class Cat
+public class Cat extends AnimatedActor
 {
     private Animation walk;    
     public Cat() 
@@ -17,6 +17,18 @@ public class Cat
     }
     public void act()
     {
-        super.act();
+        int x = getX();
+        int y = getY();
+        int w = getWidth();
+        int h = getHeight();
+        if (Mayflower.isKeyDown( Keyboard.KEY_RIGHT )&&(x<=800-w)) 
+        {
+            setLocation (x + 1, y);
+        }
+        if (Mayflower.isKeyDown( Keyboard.KEY_LEFT )&&(x>=0)) 
+        {
+            setLocation (x - 1, y);
+        }
     }
 }
+
