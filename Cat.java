@@ -4,9 +4,8 @@ public class Cat extends AnimatedActor
     private Animation walk;    
     public Cat() 
     {
-
         String[] catsFrame = new String[10];
-        for(int x=0;x<catsFrame.length;x++)
+        for(int x=0;x < catsFrame.length;x++)
         {                                                                                               
             catsFrame[x]= "img/cat/Walk ("+ (x + 1) + ").png";
         }
@@ -21,14 +20,21 @@ public class Cat extends AnimatedActor
         int y = getY();
         int w = getWidth();
         int h = getHeight();
-        if (Mayflower.isKeyDown( Keyboard.KEY_RIGHT )&&(x<=800-w)) 
+        if (Mayflower.isKeyDown(Keyboard.KEY_RIGHT) && (x <= 800 - w)) 
         {
             setLocation (x + 1, y);
         }
-        if (Mayflower.isKeyDown( Keyboard.KEY_LEFT )&&(x>=0)) 
+        if (Mayflower.isKeyDown(Keyboard.KEY_LEFT) && (x >= 0)) 
         {
             setLocation (x - 1, y);
         }
+        if (Mayflower.isKeyDown(Keyboard.KEY_UP) && (y > 0))
+        {
+            setLocation(x, y - 2);
+        }
+        if (Mayflower.isKeyDown(Keyboard.KEY_DOWN) && (y < 600 - h))
+        {
+            setLocation(x, y + 2);
+        }
     }
 }
-
