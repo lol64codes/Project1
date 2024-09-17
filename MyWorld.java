@@ -44,7 +44,7 @@ public class MyWorld extends World {
             {
                 if(tiles[x][y]=="ground")
                 {
-                    addObject(new Block(),x*128, y);
+                    addObject(new Block(),x*100, y*98);
                 }
             }
         }
