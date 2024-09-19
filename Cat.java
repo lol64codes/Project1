@@ -39,18 +39,18 @@ public class Cat extends AnimatedActor
             setLocation(x, y + 2);
         }
     }
-    public void increaseScore( int amount)
+    public void increaseScore(int amount)
     {
-        score=score+amount;
+        score = score + amount;
         updateText();
     }
-    public void increaseLives( int amount )
+    public void increaseLives(int amount)
     {
-        lives=lives-amount;
+        lives = lives - amount;
     }
-    public void decreaseLives( int amount )
+    public void decreaseLives(int amount)
     {
-        lives=lives-amount;
+        lives = lives - amount;
         updateText();
     }
     public int getLives()
@@ -66,6 +66,5 @@ public class Cat extends AnimatedActor
         World w = getWorld();
         w.removeText(10, 30);
         w.showText("Score: " + score + " Lives: " + lives, 10, 30, Color.BLACK);
-
     }
 }
