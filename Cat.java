@@ -1,6 +1,8 @@
 import mayflower.*;
 public class Cat extends AnimatedActor
 {
+    private int score;
+    private int lives;
     private Animation walk;    
     public Cat() 
     {
@@ -36,5 +38,34 @@ public class Cat extends AnimatedActor
         {
             setLocation(x, y + 2);
         }
+    }
+    public void increaseScore( int amount)
+    {
+        score=score+amount;
+        updateText();
+    }
+    public void increaseLives( int amount )
+    {
+        lives=lives-amount;
+    }
+    public void decreaseLives( int amount )
+    {
+        lives=lives-amount;
+        updateText();
+    }
+    public int getLives()
+    {
+        return lives;
+    }
+    public int getScore()
+    {
+        return score;
+    }
+    private void updateText()
+    {
+        World w = getWorld();
+        w.removeText(10, 30);
+        w.showText("Score: " + score + " Lives: " + lives, 10, 30, Color.BLACK);
+
     }
 }
