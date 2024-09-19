@@ -1,8 +1,8 @@
 import mayflower.*;
-public class MyWorld extends World {
+public class LevelOne extends World {
     private Cat cat;
     private String[][] tiles;
-    public MyWorld()
+    public LevelOne()
     {
         setBackground("img/BG/BG.png");
         //cat = new Cat();
@@ -15,6 +15,7 @@ public class MyWorld extends World {
         //addObject(ninja, 100, 400);
         tiles = new String[7][5];
         buildWorld();
+        showText("Score: " + cat.getScore() + " Lives: " + cat.getLives() , 10, 30, Color.BLACK);
                                                  
     }
     public void act()
