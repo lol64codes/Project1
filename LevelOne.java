@@ -5,8 +5,8 @@ public class LevelOne extends World {
     public LevelOne()
     {
         setBackground("img/BG/BG.png");
-        //cat = new Cat();
-        //addObject(cat, 100, 100);
+        cat = new Cat();
+        addObject(cat, 100, 496);
         //dog = new Dog()
         //addObject(dog, 100, 200);
         //jack = new Jack();
