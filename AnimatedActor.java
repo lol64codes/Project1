@@ -5,11 +5,11 @@ public class AnimatedActor extends Actor
     private Timer animationTimer;
     public AnimatedActor()
     {
-        animationTimer=new Timer(1);
+        animationTimer = new Timer(1);
     }
     public void setAnimation(Animation y)
     {
-        walk=y;
+        walk = y;
     }
     public void act()
     {
@@ -19,6 +19,5 @@ public class AnimatedActor extends Actor
             MayflowerImage m = new MayflowerImage(walk.getNextFrame());
             setImage(m);
         }
-        
     }
 }
