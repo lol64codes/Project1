@@ -5,13 +5,13 @@ public class Cat extends AnimatedActor
     public Cat() 
     {
         String[] catsFrame = new String[10];
-        for(int x=0;x < catsFrame.length;x++)
+        for (int x = 0; x < catsFrame.length; x++)
         {                                                                                               
-            catsFrame[x]= "img/cat/Walk ("+ (x + 1) + ").png";
+            catsFrame[x]= "img/cat/Walk (" + (x + 1) + ").png";
         }
-        walk=new Animation(50, catsFrame);
+        walk = new Animation(50, catsFrame);
         setAnimation(walk);
-        walk.scale(100,87);
+        walk.scale(100, 87);
         walk.setTransparency(50);                                                     
     }
     public void act()
@@ -32,7 +32,7 @@ public class Cat extends AnimatedActor
         {
             setLocation(x, y - 2);
         }
-        if (Mayflower.isKeyDown(Keyboard.KEY_DOWN) && (y < 600 - h))
+        if (Mayflower.isKeyDown(Keyboard.KEY_DOWN) && (y <= 510 - h))
         {
             setLocation(x, y + 2);
         }
