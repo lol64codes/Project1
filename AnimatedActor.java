@@ -1,15 +1,15 @@
 import mayflower.*;
-public class AnimatedActor extends Actor
+public class AnimatedActor extends Actor                      
 {
     private Animation walk;
     private Timer animationTimer;
     public AnimatedActor()
     {
-        animationTimer=new Timer(1);
+        animationTimer = new Timer(1);
     }
     public void setAnimation(Animation y)
     {
-        walk=y;
+        walk = y;
     }
     public void act()
     {
@@ -19,7 +19,5 @@ public class AnimatedActor extends Actor
             MayflowerImage m = new MayflowerImage(walk.getNextFrame());
             setImage(m);
         }
-        
     }
-    
 }
