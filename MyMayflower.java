@@ -8,7 +8,7 @@ public class MyMayflower extends Mayflower
     public void init()
     {
         Mayflower.setFullScreen(false);
-        World w =  new MyWorld();
+        World w =  new TitleScreen();
         Mayflower.setWorld(w);
     }
 }
