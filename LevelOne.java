@@ -13,6 +13,8 @@ public class LevelOne extends TitleScreen
         
         cat = new Cat();
         addObject(cat, 100, 496);
+        dog=new Dog();
+        addObject(dog, 300, 496);
         Yarn y = new Yarn();
         addObject(y, 600, 150);
         Yarn r = new Yarn();
@@ -28,6 +30,10 @@ public class LevelOne extends TitleScreen
         if(cat.getScore()== 3)
         {
                 Mayflower.setWorld(new LevelTwo());
+        }
+        if(cat.getLives()== 0)
+        {
+                Mayflower.setWorld(new LoseScreen());
         }
     }
     public void buildWorld()
