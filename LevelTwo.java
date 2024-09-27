@@ -1,6 +1,6 @@
 import mayflower.*;
 
-public class LevelTwo extends LevelOne
+public class LevelTwo extends World
 {
     private Cat cat;
     private Dog dog;
@@ -11,8 +11,9 @@ public class LevelTwo extends LevelOne
         setBackground("img/BG/BG.png");
         
         cat = new Cat();
-        dog=new Dog();
         addObject(cat, 100, 496);
+        dog=new Dog();
+        addObject(dog, 300, 496);
         Yarn y = new Yarn();
         addObject(y, 500, 150);
         Yarn r = new Yarn();
@@ -26,7 +27,14 @@ public class LevelTwo extends LevelOne
     }
     public void act()
     {
-       
+       if(cat.getLives()== 0)
+        {
+          Mayflower.setWorld(new LoseScreen());
+        }
+        else
+        {
+          Mayflower.setWorld(new WinScreen());
+        }
     }
     public void buildWorld()
     {
