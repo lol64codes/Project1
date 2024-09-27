@@ -4,16 +4,19 @@ public class Cat extends AnimatedActor
     private int score;
     private int lives;
     private Animation walk;
+    MayflowerImage i = new MayflowerImage("img/cat/Walk (1).png");
     public Cat()
     {
         String[] catsFrame = new String[10];
+        i.scale(0.3);
+        setImage(i);
         for (int x = 0; x < catsFrame.length; x++)
         {
             catsFrame[x] = "img/cat/Walk (" + (x + 1) + ").png";
         }
         walk = new Animation(50, catsFrame);
         setAnimation(walk);
-        walk.scale(100, 87);
+        walk.scale(0.3);
         walk.setTransparency(50);
     }
     public void act()
@@ -48,6 +51,7 @@ public class Cat extends AnimatedActor
                 setLocation (x, y + 1);
             }
         }
+        super.act();
     }
     public void increaseScore(int amount)
     {
