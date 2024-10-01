@@ -1,8 +1,8 @@
 import mayflower.*;
 public class Cat extends AnimatedActor
 {
-    private int score;
-    private int lives;
+    private int score = 0;
+    private int lives = 3;
     private Animation walk;
     MayflowerImage i = new MayflowerImage("img/cat/Walk (1).png");
     public Cat()
@@ -17,7 +17,6 @@ public class Cat extends AnimatedActor
         walk = new Animation(50, catsFrame);
         setAnimation(walk);
         walk.scale(0.3);
-        walk.setTransparency(50);
     }
     public void act()
     {
@@ -25,27 +24,41 @@ public class Cat extends AnimatedActor
         int y = getY();
         int w = getWidth();
         int h = getHeight();
-        if (Mayflower.isKeyDown(Keyboard.KEY_RIGHT) && (x <= 800 - w))
+        if (Mayflower.isKeyDown(Keyboard.KEY_RIGHT))
         {
-            setLocation (x + 2, y);
+            if (x <= 800 - w)
+            {
+                setLocation (x + 3, y);
+            }
+            else
+            {
+                setLocation (0, y);
+            }
         }
-        if (Mayflower.isKeyDown(Keyboard.KEY_LEFT) && (x >= 0))
+        if (Mayflower.isKeyDown(Keyboard.KEY_LEFT))
         {
-            setLocation (x - 2, y);
+            if (x >= 0)
+            {
+                setLocation (x - 3, y);
+            }
+            else
+            {
+                setLocation (700, y);
+            }
         }
         if (Mayflower.isKeyDown(Keyboard.KEY_UP) && (y > 0))
         {
-            setLocation(x, y - 2);
+            setLocation(x, y - 3);
         }
         else if (y <= 510 - h)
         {
             if (Mayflower.isKeyDown(Keyboard.KEY_RIGHT) && (x <= 800 - w)) 
             {
-                setLocation (x + 2, y + 1);
+                setLocation (x + 1, y + 1);
             }
             else if (Mayflower.isKeyDown(Keyboard.KEY_LEFT) && (x >= 0)) 
             {
-                setLocation (x - 2, y + 1);
+                setLocation (x - 1, y + 1);
             }
             else {
                 setLocation (x, y + 1);
