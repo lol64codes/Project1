@@ -31,7 +31,7 @@ public class LevelTwo extends World
         {
           Mayflower.setWorld(new LoseScreen());
         }
-        else
+       if(cat.getScore()==6)
         {
           Mayflower.setWorld(new WinScreen());
         }
